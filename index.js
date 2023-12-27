@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./db");
 const router = require("./routes/userRoutes");
+const cors = require('cors')
 
 const app = express();
 
@@ -16,7 +17,6 @@ app.use(
     methods: "GET, POST, PATCH, PUT, POST, DELETE, OPTION",
   })
 );
-app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 connectDB();
 
